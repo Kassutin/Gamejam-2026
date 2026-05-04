@@ -9,6 +9,14 @@ func _physics_process(delta):
 func _on_Bullet_body_entered(body):
 	if body.is_in_group("enemies"):
 		body.queue_free()
+	
 	if body.is_in_group("terrain"):
-		body.queue_free()
+		# Asteroidin split, score, jne.
+		if body.has_method("hit"):
+			body.hit()
+		else:
+			body.queue_free()
+	
+	# Luoti käytetty kun osuu
+	queue_free()
 	
