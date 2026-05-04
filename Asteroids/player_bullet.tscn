@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://cu31d6t5whps7"]
+
+[ext_resource type="Script" uid="uid://dxo4002benuex" path="res://player_bullet.gd" id="1_oxuh6"]
+[ext_resource type="Texture2D" uid="uid://bmmigjy716svi" path="res://laserRed01.png" id="2_nnlih"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_18yi1"]
+radius = 6.0
+height = 60.0
+
+[node name="PlayerBullet" type="Area2D" unique_id=754065960]
+position = Vector2(2, -6)
+rotation = 1.5707964
+script = ExtResource("1_oxuh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1515088679]
+rotation = 1.5707964
+texture = ExtResource("2_nnlih")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=594305634]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_18yi1")
+
+[connection signal="body_entered" from="." to="." method="_on_Bullet_body_entered"]

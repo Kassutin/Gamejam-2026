@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://5v0acxih2mvf"]
+
+[ext_resource type="Texture2D" uid="uid://bfl440qxdaybi" path="res://asteroid_big2.png" id="1_n2vxl"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dicgi"]
+points = PackedVector2Array(32, 19, -21, 39, -45, -5, -1, -31, 40, -13)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1943826682 groups=["terrain"]]
+position = Vector2(2, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1399667139]
+position = Vector2(-2, 2)
+texture = ExtResource("1_n2vxl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=266987473]
+shape = SubResource("ConvexPolygonShape2D_dicgi")
