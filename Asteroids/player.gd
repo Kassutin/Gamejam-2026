@@ -7,6 +7,7 @@ extends CharacterBody2D
 @export var player_bullet : PackedScene
 @onready var energy_bar = $TextureProgressBar
 
+
 var max_energy = 10
 var energy = 10.0 # Make this a float (100.0) for smooth math
 
@@ -24,6 +25,7 @@ func _on_timer_timeout():
 			energy = max_energy
 		
 
+	
 
 func _update_animations():
 	var sprite = $AnimatedSprite2D
