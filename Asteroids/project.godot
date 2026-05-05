@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Astereoidit"
-run/main_scene="uid://d4gtdbgmgmfno"
-config/features=PackedStringArray("4.6", "Mobile")
+run/main_scene="uid://dplwkb06jtfx2"
+config/features=PackedStringArray("4.5", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Score="*res://score.gd"
 
 [global_group]
 

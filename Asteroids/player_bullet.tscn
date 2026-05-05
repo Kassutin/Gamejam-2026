@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cu31d6t5whps7"]
+[gd_scene load_steps=4 format=3 uid="uid://cu31d6t5whps7"]
 
 [ext_resource type="Script" uid="uid://dxo4002benuex" path="res://player_bullet.gd" id="1_oxuh6"]
 [ext_resource type="Texture2D" uid="uid://bmmigjy716svi" path="res://laserRed01.png" id="2_nnlih"]
@@ -7,16 +7,16 @@
 radius = 6.0
 height = 60.0
 
-[node name="PlayerBullet" type="Area2D" unique_id=754065960]
+[node name="PlayerBullet" type="Area2D"]
 position = Vector2(2, -6)
 rotation = 1.5707964
 script = ExtResource("1_oxuh6")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1515088679]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 1.5707964
 texture = ExtResource("2_nnlih")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=594305634]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_18yi1")
 
