@@ -1,9 +1,0 @@
-res://Level1.tscn
-res://player.gd
-res://player_bullet.tscn
-res://player_bullet.gd
-res://score.gd
-res://player_ship.tscn
-res://score_label.gd
-res://startgame.gd
-res://startscreen.tscn
