@@ -65,8 +65,24 @@ func shoot():
 	else: 
 		pass
 
+func _wrap_screen() -> void:
+	var screen_size = get_viewport_rect().size
+	
+	if position.x < 0:
+		position.x = screen_size.x
+	elif position.x > screen_size.x:
+		position.x = 0
+	
+	if position.y < 0:
+		position.y = screen_size.y
+	elif position.y > screen_size.y:
+		position.y = 0
+
 func _physics_process(delta):
 	get_input(delta)
 	rotation += rotation_direction * rotation_speed * delta
 	move_and_slide()
 	_update_animations()
+	_wrap_screen()
+
+	
