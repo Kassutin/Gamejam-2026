@@ -36,6 +36,13 @@ func hit() -> void:
 	if size > 0:
 		_spawn_children()
 	
+	var sound = $HitSound
+	remove_child(sound)
+	get_tree().current_scene.add_child(sound)
+	sound.play()
+	
+	sound.finished.connect(sound.queue_free)
+	
 	queue_free()
 
 
