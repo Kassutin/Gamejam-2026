@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6630cllxk0aq"]
+[gd_scene load_steps=11 format=3 uid="uid://c6630cllxk0aq"]
 
 [ext_resource type="Script" uid="uid://jdr7ien812nx" path="res://player.gd" id="1_gbmm3"]
 [ext_resource type="Texture2D" uid="uid://bjui7rg8504mf" path="res://spaceship_spritesheet.png" id="2_7vdj4"]
 [ext_resource type="PackedScene" uid="uid://cu31d6t5whps7" path="res://player_bullet.tscn" id="2_m3v2r"]
+[ext_resource type="AudioStream" uid="uid://b354pm3muau4b" path="res://audio/lasershoot.wav" id="4_m3v2r"]
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_m3v2r"]
 points = PackedVector2Array(0, -17, -9, 10, 9, 10)
@@ -103,5 +104,9 @@ texture_progress = SubResource("CompressedTexture2D_m3v2r")
 tint_under = Color(0, 10.998333, 10.998333, 0)
 tint_over = Color(1, 0, 0, 0)
 tint_progress = Color(1, 0, 0, 1)
+
+[node name="ShootSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_m3v2r")
+volume_db = -4.771
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

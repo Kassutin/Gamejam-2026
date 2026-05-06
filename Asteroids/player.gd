@@ -62,6 +62,7 @@ func shoot():
 		get_parent().add_child(b)
 		b.transform = $Marker2D.global_transform
 		energy -= 1
+		$ShootSound.play()
 	else: 
 		pass
 
