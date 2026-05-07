@@ -1,25 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://c6630cllxk0aq"]
+[gd_scene load_steps=9 format=3 uid="uid://c6630cllxk0aq"]
 
 [ext_resource type="Script" uid="uid://jdr7ien812nx" path="res://player.gd" id="1_gbmm3"]
-[ext_resource type="Texture2D" uid="uid://bjui7rg8504mf" path="res://spaceship_spritesheet.png" id="2_7vdj4"]
 [ext_resource type="PackedScene" uid="uid://cu31d6t5whps7" path="res://player_bullet.tscn" id="2_m3v2r"]
+[ext_resource type="Texture2D" uid="uid://gkpi72aphnmk" path="res://Playersprite moving (small).png" id="3_m3v2r"]
+[ext_resource type="Texture2D" uid="uid://h5uxxqq8xsk5" path="res://Playersprite (small).png" id="4_gk68h"]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_m3v2r"]
-points = PackedVector2Array(0, -17, -9, 10, 9, 10)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_gbmm3"]
-atlas = ExtResource("2_7vdj4")
-region = Rect2(0, 0, 16, 27)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7vdj4"]
-atlas = ExtResource("2_7vdj4")
-region = Rect2(16, 0, 16, 27)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sod33"]
+radius = 13.0
+height = 50.0
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m3v2r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gbmm3")
+"texture": ExtResource("3_m3v2r")
 }],
 "loop": true,
 "name": &"default",
@@ -27,22 +21,22 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_7vdj4")
+"texture": ExtResource("4_gk68h")
 }],
 "loop": true,
 "name": &"thrust",
@@ -55,7 +49,7 @@ load_path = "res://.godot/imported/Untitled_design__2_-removebg-preview.png-6640
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m3v2r"]
 load_path = "res://.godot/imported/Untitled_design__2_-removebg-preview.png-6640d3cf9d551656a1e09454c7e66312.ctex"
 
-[node name="player_ship" type="CharacterBody2D"]
+[node name="player_ship" type="CharacterBody2D" groups=["player"]]
 position = Vector2(155, 88)
 rotation = 1.5707964
 script = ExtResource("1_gbmm3")
@@ -66,14 +60,14 @@ player_bullet = ExtResource("2_m3v2r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = 1.5707964
-shape = SubResource("ConvexPolygonShape2D_m3v2r")
+shape = SubResource("CapsuleShape2D_sod33")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1.9999976, -6.500875e-06)
 rotation = 1.5707964
+scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_m3v2r")
-animation = &"thrust"
 autoplay = "default"
-frame_progress = 0.2744359
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(68, -1.000003)
@@ -88,7 +82,7 @@ anchor_left = 0.135
 anchor_top = 0.13900001
 anchor_right = 0.135
 anchor_bottom = 0.13900001
-offset_left = -64.0
+offset_left = -64.00001
 offset_top = -64.0
 offset_right = 192.0
 offset_bottom = 192.0

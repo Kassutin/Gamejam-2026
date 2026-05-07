@@ -9,6 +9,5 @@ func _process(_delta):
 	# We check "is_instance_valid" to make sure the ship hasn't been deleted
 	if is_instance_valid(player):
 		# Access the energy variable from your ship script
-		text = "Energy: " + str(int(player.energy))
-	else:
-		text = "Ship Offline"
+		text = "Points: " + str(int(Score.player_score))
+	

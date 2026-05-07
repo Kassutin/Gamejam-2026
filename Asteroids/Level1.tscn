@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4gtdbgmgmfno"]
+[gd_scene load_steps=6 format=3 uid="uid://d4gtdbgmgmfno"]
 
+[ext_resource type="Texture2D" uid="uid://dwm2e7fo3qrbr" path="res://space_background_fixed.jpg" id="1_dn5ey"]
 [ext_resource type="PackedScene" uid="uid://c6630cllxk0aq" path="res://player_ship.tscn" id="1_mc20k"]
 [ext_resource type="Script" uid="uid://cmjy40b28h3ib" path="res://energy.gd" id="2_cove1"]
-[ext_resource type="PackedScene" uid="uid://5v0acxih2mvf" path="res://boulder.tscn" id="3_cove1"]
+[ext_resource type="PackedScene" uid="uid://5v0acxih2mvf" path="res://boulder_big.tscn" id="3_cove1"]
 [ext_resource type="Script" uid="uid://css1np1p3ohr7" path="res://asteroid_spawner.gd" id="4_dwyiq"]
 
 [node name="Level1" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 341.00003)
+scale = Vector2(0.23059997, 0.16950001)
+texture = ExtResource("1_dn5ey")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 98.0
@@ -16,9 +22,6 @@ metadata/_edit_use_anchors_ = true
 
 [node name="player_ship" parent="." instance=ExtResource("1_mc20k")]
 position = Vector2(669, 305)
-
-[node name="boulder" parent="." instance=ExtResource("3_cove1")]
-position = Vector2(373, 195)
 
 [node name="AsteroidSpawner" type="Node" parent="."]
 script = ExtResource("4_dwyiq")

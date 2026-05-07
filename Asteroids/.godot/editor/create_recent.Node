@@ -1,2 +1,7 @@
+Sprite2D
+TileMap
+CanvasGroup
+AnimatedSprite2D
+Area2D
 Button
 Label

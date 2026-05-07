@@ -6,10 +6,10 @@ extends CharacterBody2D
 @export var friction = 1000      # How fast you come to a stop
 @export var player_bullet : PackedScene
 @onready var energy_bar = $TextureProgressBar
+var lives = 3
 
-
-var max_energy = 10
-var energy = 10.0 # Make this a float (100.0) for smooth math
+var max_energy = 30
+var energy = 30.0 # Make this a float (100.0) for smooth math
 
 var rotation_direction = 0.0
 
@@ -25,7 +25,15 @@ func _on_timer_timeout():
 			energy = max_energy
 		
 
+func die() -> void:
+	Score.lives -= 1
 	
+	if Score.lives <= 0:
+		get_tree().change_scene_to_file("res://startscreen.tscn")
+	else:
+		# Respawn logic: Reset position or reload the current level
+		get_tree().reload_current_scene()
+
 
 func _update_animations():
 	var sprite = $AnimatedSprite2D

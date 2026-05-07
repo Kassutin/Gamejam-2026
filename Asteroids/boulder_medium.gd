@@ -1,11 +1,11 @@
 extends RigidBody2D
 
 # Koot: 0 = peini, 1 = keskikokoinen, 2 = iso
-@export var size: int = 2
+@export var size: int = 1
 
 # Movement
-@export var min_speed: float = 50.0
-@export var max_speed: float = 150.0
+@export var min_speed: float = 100.0
+@export var max_speed: float = 200.0
 @export var max_spin: float = 2.0
 
 # split isosta asteroidista (only if size > 0)
@@ -13,11 +13,11 @@ const SPLIT_COUNT: int = 2
 
 # pisteiden määrä kun boulder osunut.
 const POINTS_BY_SIZE = {0: 100, 1: 50, 2: 20}
-
+var scale_by_size = {0: 0.35, 1: 0.6, 2: 1.0}
 
 func _ready() -> void:
 	
-	var scale_by_size = {0: 0.35, 1: 0.6, 2: 1.0}
+	
 	scale = Vector2.ONE * scale_by_size[size]
 	
 	# Satunnainen suunta ja nopeus
@@ -29,9 +29,15 @@ func _ready() -> void:
 
 
 func hit() -> void:
-	# pisteet myönnetään asteroidin koon perusteella.
-	var points = POINTS_BY_SIZE[size]
-	print("Asteroid destroyed! +", points, " points")
+	Score.player_score += POINTS_BY_SIZE.get(size)
+	
+	$CollisionShape2D.set_deferred("disabled", true)
+	
+
+	$AnimatedSprite2D.play("Destroy")
+	
+	
+	await $AnimatedSprite2D.animation_finished
 	
 	if size > 0:
 		_spawn_children()
@@ -40,11 +46,25 @@ func hit() -> void:
 
 
 func _spawn_children() -> void:
-	var asteroid_scene = load("res://boulder.tscn")
+	var asteroid_scene: PackedScene
+	var child_size = size - 1 # Determine the target size first
 	
+	# Load the scene for the NEW smaller asteroids
+	if child_size == 1:
+		asteroid_scene = load("res://boulder_medium.tscn")
+	elif child_size == 0:
+		asteroid_scene = load("res://boulder_small.tscn")
+	
+	# Safety check: if we didn't find a scene, stop here
+	if asteroid_scene == null:
+		return
+
 	for i in SPLIT_COUNT:
 		var child = asteroid_scene.instantiate()
-		child.size = size - 1          # yksi koko pienempi
+		
+		# Set the size and scale on the CHILD instance
+		child.size = child_size
+		child.scale = Vector2.ONE * scale_by_size[child_size]
 		child.global_position = global_position
 		
 		get_parent().add_child(child)
@@ -68,3 +88,7 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	
 	current_transform.origin = pos
 	state.transform = current_transform
+
+func _on_body_entered(body: Node) -> void:
+	if body.is_in_group("player"):
+		body.die()

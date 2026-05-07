@@ -5,8 +5,8 @@ extends Node
 # Asteroidin määrä levelin alkaessa
 @export var initial_count: int = 4
 
-# Kuinka usei uusi asteroidi tulee
-@export var spawn_interval: float = 3.0
+# Kuinka usein uusi asteroidi tulee
+@export var spawn_interval: float = 5.0
 
 var _time_since_last_spawn: float = 0.0
 
@@ -14,8 +14,8 @@ func _ready() -> void:
 	for i in initial_count:
 		_spawn_asteroid_at_random_position()
 
-
 func _process(delta: float) -> void:
+	
 	_time_since_last_spawn += delta
 	if _time_since_last_spawn >= spawn_interval:
 		_time_since_last_spawn = 0.0
