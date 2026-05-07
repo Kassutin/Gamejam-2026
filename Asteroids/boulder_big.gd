@@ -30,11 +30,13 @@ func _ready() -> void:
 
 func hit() -> void:
 	
+	
+	$AudioStreamPlayer.play()
 	Score.player_score += POINTS_BY_SIZE.get(size)
 	
 	$CollisionShape2D.set_deferred("disabled", true)
 	
-
+	
 	$AnimatedSprite2D.play("Destroy")
 	
 	
@@ -93,4 +95,5 @@ func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.is_in_group("player"):
 		body.die()
+		hit()
 		

@@ -26,13 +26,20 @@ func _on_timer_timeout():
 		
 
 func die() -> void:
+	set_physics_process(false)
+	$CollisionShape2D.set_deferred("disabled", true) 
+	var sprite = $AnimatedSprite2D
+	sprite.play("death") 
+	
+	await sprite.animation_finished 
+	
 	Score.lives -= 1
 	
 	if Score.lives <= 0:
-		get_tree().change_scene_to_file("res://startscreen.tscn")
+		Score.player_score = 0
+		get_tree().call_deferred("change_scene_to_file", "res://Gameover.tscn")
 	else:
-		# Respawn logic: Reset position or reload the current level
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 
 
 func _update_animations():
@@ -66,6 +73,7 @@ func get_input(delta):
 
 func shoot():
 	if energy > 0:
+		$AudioStreamPlayer.play()
 		var b = player_bullet.instantiate()
 		get_parent().add_child(b)
 		b.transform = $Marker2D.global_transform
@@ -92,5 +100,3 @@ func _physics_process(delta):
 	move_and_slide()
 	_update_animations()
 	_wrap_screen()
-
-	

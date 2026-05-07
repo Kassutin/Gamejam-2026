@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4gtdbgmgmfno"]
+[gd_scene load_steps=8 format=3 uid="uid://d4gtdbgmgmfno"]
 
 [ext_resource type="Texture2D" uid="uid://dwm2e7fo3qrbr" path="res://space_background_fixed.jpg" id="1_dn5ey"]
 [ext_resource type="PackedScene" uid="uid://c6630cllxk0aq" path="res://player_ship.tscn" id="1_mc20k"]
 [ext_resource type="Script" uid="uid://cmjy40b28h3ib" path="res://energy.gd" id="2_cove1"]
 [ext_resource type="PackedScene" uid="uid://5v0acxih2mvf" path="res://boulder_big.tscn" id="3_cove1"]
+[ext_resource type="Script" uid="uid://8ryhktjigfy7" path="res://label_2.gd" id="3_mlbie"]
 [ext_resource type="Script" uid="uid://css1np1p3ohr7" path="res://asteroid_spawner.gd" id="4_dwyiq"]
+[ext_resource type="AudioStream" uid="uid://cuufq7l2utvi1" path="res://backgroundmusic.mp3" id="6_lmyl5"]
 
 [node name="Level1" type="Node2D"]
 
@@ -20,9 +22,26 @@ theme_override_colors/font_color = Color(0.86343604, 5.318448e-06, 7.70092e-07, 
 script = ExtResource("2_cove1")
 metadata/_edit_use_anchors_ = true
 
+[node name="Label2" type="Label" parent="."]
+offset_left = 129.0
+offset_top = 2.0
+offset_right = 227.0
+offset_bottom = 37.0
+theme_override_colors/font_color = Color(0.86343604, 5.318448e-06, 7.70092e-07, 1)
+script = ExtResource("3_mlbie")
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
 [node name="player_ship" parent="." instance=ExtResource("1_mc20k")]
 position = Vector2(669, 305)
 
 [node name="AsteroidSpawner" type="Node" parent="."]
 script = ExtResource("4_dwyiq")
 asteroid_scene = ExtResource("3_cove1")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_lmyl5")
+volume_db = -10.0
+autoplay = true
+parameters/looping = true

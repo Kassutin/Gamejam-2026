@@ -1,7 +1,12 @@
+CanvasLayer
+HBoxContainer
+TextureProgressBar
+AudioStreamPlayer      - Matches the "sound" keyword.
 Sprite2D
+Button
+AudioStreamPlayer
 TileMap
 CanvasGroup
 AnimatedSprite2D
 Area2D
-Button
 Label

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpcx7yqwqp56a"]
+
+[ext_resource type="Script" uid="uid://cpnur30fjvl62" path="res://boulder_medium.gd" id="1_76sbg"]
+[ext_resource type="Texture2D" uid="uid://30ya2epnw5qe" path="res://medium_asteroid_destroyed.png" id="2_hour2"]
+[ext_resource type="Texture2D" uid="uid://bda8yxfwp2sbd" path="res://medium_asteroid_pieces.png" id="3_ppsmk"]
+[ext_resource type="Texture2D" uid="uid://0c1r1nfgtg6x" path="res://medium_asteroid.png" id="4_efvdj"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dicgi"]
+points = PackedVector2Array(26, 15, 12, 3, 1, -13, -4, -24, -4, -28, 4, -28, 35, -18, 53, 2, 60, 15, 46, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xspqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_hour2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ppsmk")
+}],
+"loop": false,
+"name": &"Destroy",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_efvdj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="RigidBody2D" type="RigidBody2D" groups=["terrain"]]
+gravity_scale = 0.0
+contact_monitor = true
+max_contacts_reported = 1
+script = ExtResource("1_76sbg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-45, 4)
+shape = SubResource("ConvexPolygonShape2D_dicgi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-18, 0)
+scale = Vector2(0.15, 0.15)
+sprite_frames = SubResource("SpriteFrames_xspqq")
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

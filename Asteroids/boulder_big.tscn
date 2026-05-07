@@ -1,9 +1,14 @@
-[gd_scene load_steps=7 format=3 uid="uid://5v0acxih2mvf"]
+[gd_scene load_steps=8 format=3 uid="uid://5v0acxih2mvf"]
 
 [ext_resource type="Script" uid="uid://ckfsjvcqcpls3" path="res://boulder_big.gd" id="1_dicgi"]
 [ext_resource type="Texture2D" uid="uid://r3a0ismtdahi" path="res://big_asteroid_destroyed.png" id="2_fa6fc"]
 [ext_resource type="Texture2D" uid="uid://dyegciycuivex" path="res://big_asteroid_pieces.png" id="3_887tu"]
 [ext_resource type="Texture2D" uid="uid://m8qioplvcoub" path="res://big_asteroid.png" id="4_vjtgj"]
+[ext_resource type="AudioStream" uid="uid://btp3ib5epggw3" path="res://explosion.wav" id="5_887tu"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dicgi"]
+custom_solver_bias = 0.27
+points = PackedVector2Array(-28, -37, -14, -39, 10, -38, 25, -23, 38, -21, 54, -18, 62, 15, 49, 39, 36, 49, 8, 53, -13, 48, -34, 38, -41, 34, -46, 26, -49, 10, -45, -19)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vsy0"]
 animations = [{
@@ -27,25 +32,25 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_dicgi"]
-custom_solver_bias = 0.27
-points = PackedVector2Array(-28, -37, -14, -39, 10, -38, 25, -23, 38, -21, 54, -18, 62, 15, 49, 39, 36, 49, 8, 51, -13, 48, -34, 38, -41, 34, -46, 26, -49, 10, -45, -19)
-
 [node name="RigidBody2D" type="RigidBody2D" groups=["terrain"]]
 gravity_scale = 0.0
 contact_monitor = true
 max_contacts_reported = 1
 script = ExtResource("1_dicgi")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 19)
+shape = SubResource("ConvexPolygonShape2D_dicgi")
+
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(6, 25.000002)
 scale = Vector2(0.2, 0.194)
 sprite_frames = SubResource("SpriteFrames_7vsy0")
-animation = &"Destroy"
+animation = &"Normal"
 autoplay = "Normal"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 19)
-shape = SubResource("ConvexPolygonShape2D_dicgi")
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_887tu")
+volume_db = -10.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,16 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://c6630cllxk0aq"]
+[gd_scene load_steps=13 format=3 uid="uid://c6630cllxk0aq"]
 
 [ext_resource type="Script" uid="uid://jdr7ien812nx" path="res://player.gd" id="1_gbmm3"]
 [ext_resource type="PackedScene" uid="uid://cu31d6t5whps7" path="res://player_bullet.tscn" id="2_m3v2r"]
 [ext_resource type="Texture2D" uid="uid://gkpi72aphnmk" path="res://Playersprite moving (small).png" id="3_m3v2r"]
 [ext_resource type="Texture2D" uid="uid://h5uxxqq8xsk5" path="res://Playersprite (small).png" id="4_gk68h"]
+[ext_resource type="Texture2D" uid="uid://qshdpuy8wmk5" path="res://playersprite_exploding.png" id="4_noyhe"]
+[ext_resource type="Texture2D" uid="uid://b3argf5pom18x" path="res://playersprite_destroyed.png" id="5_txo0d"]
+[ext_resource type="Texture2D" uid="uid://bevah0t3kd44k" path="res://playersprite_pieces.png" id="6_5mroa"]
+[ext_resource type="AudioStream" uid="uid://b354pm3muau4b" path="res://lasershoot.wav" id="8_txo0d"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_sod33"]
-radius = 13.0
-height = 50.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_txo0d"]
+size = Vector2(28, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m3v2r"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_noyhe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_txo0d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5mroa")
+}],
+"loop": false,
+"name": &"death",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("3_m3v2r")
@@ -59,14 +76,16 @@ friction = 100
 player_bullet = ExtResource("2_m3v2r")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
 rotation = 1.5707964
-shape = SubResource("CapsuleShape2D_sod33")
+shape = SubResource("RectangleShape2D_txo0d")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1.9999976, -6.500875e-06)
 rotation = 1.5707964
 scale = Vector2(0.18, 0.18)
 sprite_frames = SubResource("SpriteFrames_m3v2r")
+animation = &"death"
 autoplay = "default"
 
 [node name="Marker2D" type="Marker2D" parent="."]
@@ -97,5 +116,9 @@ texture_progress = SubResource("CompressedTexture2D_m3v2r")
 tint_under = Color(0, 10.998333, 10.998333, 0)
 tint_over = Color(1, 0, 0, 0)
 tint_progress = Color(1, 0, 0, 1)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_txo0d")
+volume_db = -10.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

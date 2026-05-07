@@ -1,36 +1,44 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1778080012
-asteroid_big2.png::CompressedTexture2D::2761886976841065754::1777877830::1777877925::1::::<><><>0<>0<>e75c045ce2dddee38fe68f91c9ba3705<>res://.godot/imported/asteroid_big2.png-111ecd006ce46cf3c64bc3aada7788d5.ctex::
+::res://::1778142316
+asteroid_big2.png::CompressedTexture2D::2761886976841065754::1777877830::1778139420::1::::<><><>0<>0<>e75c045ce2dddee38fe68f91c9ba3705<>res://.godot/imported/asteroid_big2.png-111ecd006ce46cf3c64bc3aada7788d5.ctex::
 asteroid_spawner.gd::GDScript::6075002038311227406::1778071428::0::1::::<>Node<><>0<>0<><>::
-big_asteroid.png::CompressedTexture2D::911377106802780257::1778071977::1778071917::1::::<><><>0<>0<>a4c60fb93f49d141af445f31036d483a<>res://.godot/imported/big_asteroid.png-154b07cbe7d8c07a11846977f5ecec83.ctex::
+backgroundmusic.mp3::AudioStreamMP3::6218239651888663670::1778142315::1778142316::1::::<><><>0<>0<>a1115a0e97f0c6b779e60d437ad944e8<>res://.godot/imported/backgroundmusic.mp3-05f12c2936dd101b16c4307e488c2e2f.mp3str::
+big_asteroid.png::CompressedTexture2D::911377106802780257::1778139538::1778142109::1::::<><><>0<>0<>a4c60fb93f49d141af445f31036d483a<>res://.godot/imported/big_asteroid.png-154b07cbe7d8c07a11846977f5ecec83.ctex::
 big_asteroid_destroyed.png::CompressedTexture2D::1251058012371860926::1778071977::1778071974::1::::<><><>0<>0<>1405a93b6709cb972e3e4d294704e7e5<>res://.godot/imported/big_asteroid_destroyed.png-cee2713e2ee1371bbd36c0adc16a60af.ctex::
 big_asteroid_pieces.png::CompressedTexture2D::8852420140332771635::1778071977::1778071977::1::::<><><>0<>0<>9b97733293a0bb67fe71508f66529f68<>res://.godot/imported/big_asteroid_pieces.png-cbad999221fe29e29e48e9241727cde6.ctex::
-boulder_big.gd::GDScript::5486161777361969476::1778072823::0::1::::<>RigidBody2D<><>0<>0<><>::
+boulder_big.gd::GDScript::5486161777361969476::1778139538::0::1::::<>RigidBody2D<><>0<>0<><>::
 boulder_big.tscn::PackedScene::2150535307746503815::1778073158::0::1::::<><><>0<>0<><>::uid://ckfsjvcqcpls3::::res://boulder_big.gd<>uid://r3a0ismtdahi::::res://big_asteroid_destroyed.png<>uid://dyegciycuivex::::res://big_asteroid_pieces.png<>uid://m8qioplvcoub::::res://big_asteroid.png
 boulder_medium.gd::GDScript::5853757140625135229::1778073132::0::1::::<>RigidBody2D<><>0<>0<><>::
 boulder_medium.tscn::PackedScene::3444837016309151822::1778073337::0::1::::<><><>0<>0<><>::uid://cpnur30fjvl62::::res://boulder_medium.gd<>uid://30ya2epnw5qe::::res://medium_asteroid_destroyed.png<>uid://bda8yxfwp2sbd::::res://medium_asteroid_pieces.png<>uid://0c1r1nfgtg6x::::res://medium_asteroid.png
 boulder_small.gd::GDScript::8234403373268290833::1778073588::0::1::::<>RigidBody2D<><>0<>0<><>::
 boulder_small.tscn::PackedScene::1167728918407421995::1778073584::0::1::::<><><>0<>0<><>::uid://dpk2okdgnqk54::::res://boulder_small.gd<>uid://5pcd5kh276c7::::res://small_asteroid_destroyed.png<>uid://coi2xuui61baq::::res://little_asteroid_pieces.png<>uid://dig8eeflwtjv3::::res://little_asteroid.png
 energy.gd::GDScript::5635197202578487145::1777966352::0::1::::<>Label<><>0<>0<><>::
-icon.svg::CompressedTexture2D::1468888275710211912::1777877830::1777877926::1::::<><><>0<>0<>c36adb89dd15c229c1229d2fc3de6962<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-laserRed01.png::CompressedTexture2D::3253956302379143602::1777877830::1777877925::1::::<><><>0<>0<>97b6d3f7096b0e8bb48c07ce2615159c<>res://.godot/imported/laserRed01.png-5c4f86f38d185760a9e2fbc316441561.ctex::
-Level1.tscn::PackedScene::9208283825696776092::1778073921::0::1::::<><><>0<>0<><>::uid://dwm2e7fo3qrbr::::res://space_background_fixed.jpg<>uid://c6630cllxk0aq::::res://player_ship.tscn<>uid://cmjy40b28h3ib::::res://energy.gd<>uid://5v0acxih2mvf::::res://boulder_big.tscn<>uid://css1np1p3ohr7::::res://asteroid_spawner.gd
-little_asteroid.png::CompressedTexture2D::7735170088992203426::1778071977::1778071977::1::::<><><>0<>0<>8e174f7d239001632586bb3ca6665dcf<>res://.godot/imported/little_asteroid.png-1671cbb2ed6e8df418be6404173edfdf.ctex::
+explosion.wav::AudioStreamWAV::3752688840344826048::1778142315::1778142317::1::::<><><>0<>0<>7da62839be358132a8a5b574e1cab6ec<>res://.godot/imported/explosion.wav-a595096ecd3e80c5997ac70fba7fa257.sample::
+gameover.png::CompressedTexture2D::7448213315487546301::1778142315::1778142316::1::::<><><>0<>0<>3af51038528f507ca6b515a2dcaeab2b<>res://.godot/imported/gameover.png-ccc12850baa89029b52eaa24696a07bd.ctex::
+icon.svg::CompressedTexture2D::1468888275710211912::1777877830::1778139420::1::::<><><>0<>0<>c36adb89dd15c229c1229d2fc3de6962<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+image.png::CompressedTexture2D::4943157905364053260::1778142315::1778142316::1::::<><><>0<>0<>59dadaed00fdef93dc27eab7aa0dc596<>res://.godot/imported/image.png-2de165adb17dfebcee8a7cd6c9833936.ctex::
+laserRed01.png::CompressedTexture2D::3253956302379143602::1777877830::1778139420::1::::<><><>0<>0<>97b6d3f7096b0e8bb48c07ce2615159c<>res://.godot/imported/laserRed01.png-5c4f86f38d185760a9e2fbc316441561.ctex::
+lasershoot.wav::AudioStreamWAV::4415427891985303275::1778142316::1778142317::1::::<><><>0<>0<>8b16c20ecdbfb1fb43850789aa6e9139<>res://.godot/imported/lasershoot.wav-91fd0f3c7964b91587f895ca0f6bb1c8.sample::
+Level1.tscn::PackedScene::9208283825696776092::1778139538::0::1::::<><><>0<>0<><>::uid://dwm2e7fo3qrbr::::res://space_background_fixed.jpg<>uid://c6630cllxk0aq::::res://player_ship.tscn<>uid://cmjy40b28h3ib::::res://energy.gd<>uid://5v0acxih2mvf::::res://boulder_big.tscn<>uid://css1np1p3ohr7::::res://asteroid_spawner.gd
+little_asteroid.png::CompressedTexture2D::7735170088992203426::1778139538::1778142108::1::::<><><>0<>0<>8e174f7d239001632586bb3ca6665dcf<>res://.godot/imported/little_asteroid.png-1671cbb2ed6e8df418be6404173edfdf.ctex::
 little_asteroid_pieces.png::CompressedTexture2D::5773681714184664916::1778071977::1778071977::1::::<><><>0<>0<>80658d96f8923718935b37e4bf4564e1<>res://.godot/imported/little_asteroid_pieces.png-ac75df692aaf2e967e9c4aa2e098c5c5.ctex::
-medium_asteroid.png::CompressedTexture2D::1760460232692751525::1778071977::1778071978::1::::<><><>0<>0<>dcd542904a4f3a553b04e163093566a6<>res://.godot/imported/medium_asteroid.png-06cfb2540328dfd28c5fcd2bcaeb3f5d.ctex::
+medium_asteroid.png::CompressedTexture2D::1760460232692751525::1778139538::1778142108::1::::<><><>0<>0<>dcd542904a4f3a553b04e163093566a6<>res://.godot/imported/medium_asteroid.png-06cfb2540328dfd28c5fcd2bcaeb3f5d.ctex::
 medium_asteroid_destroyed.png::CompressedTexture2D::2018355698552271484::1778071977::1778071978::1::::<><><>0<>0<>b72c7b1e81b56c26fe94fdd53444cd70<>res://.godot/imported/medium_asteroid_destroyed.png-92ddbc99d577686ead7d7b51e6a101c5.ctex::
 medium_asteroid_pieces.png::CompressedTexture2D::2599034951203990837::1778071977::1778071978::1::::<><><>0<>0<>4298e377a1f2ccf877e5ce762abc449d<>res://.godot/imported/medium_asteroid_pieces.png-d6ee0b49c15f88e33a0bce8f4956eb8b.ctex::
-player.gd::GDScript::638982487288289341::1777998529::0::1::::<>CharacterBody2D<><>0<>0<><>::
-Playersprite (small).png::CompressedTexture2D::554509884729076866::1778080012::1778080012::1::::<><><>0<>0<>110cef9d8a3e9564864517aafaadc0eb<>res://.godot/imported/Playersprite (small).png-db4feb2fa143472c31f4de5a6b54c2c9.ctex::
-Playersprite moving (small).png::CompressedTexture2D::442703603088787646::1778080012::1778080012::1::::<><><>0<>0<>efd61cd09a10ded04b4daf241e7d7b57<>res://.godot/imported/Playersprite moving (small).png-bba87d1bb503c967d03e76868e287b3c.ctex::
+player.gd::GDScript::638982487288289341::1778139538::0::1::::<>CharacterBody2D<><>0<>0<><>::
+Playersprite (small).png::CompressedTexture2D::554509884729076866::1778080012::1778142109::1::::<><><>0<>0<>110cef9d8a3e9564864517aafaadc0eb<>res://.godot/imported/Playersprite (small).png-db4feb2fa143472c31f4de5a6b54c2c9.ctex::
+Playersprite moving (small).png::CompressedTexture2D::442703603088787646::1778080012::1778142109::1::::<><><>0<>0<>efd61cd09a10ded04b4daf241e7d7b57<>res://.godot/imported/Playersprite moving (small).png-bba87d1bb503c967d03e76868e287b3c.ctex::
+playersprite_destroyed.png::CompressedTexture2D::4352751518860093185::1778142316::1778142316::1::::<><><>0<>0<>a4c88501cc58896ad5068ee1a1f98adc<>res://.godot/imported/playersprite_destroyed.png-261c4ec1ab8a9d982d768c659541d8d3.ctex::
+playersprite_exploding.png::CompressedTexture2D::1160611493994442722::1778142316::1778142316::1::::<><><>0<>0<>11ad40cd0d3c2357af372f72c09afaa9<>res://.godot/imported/playersprite_exploding.png-77f3b1e23719f8d459895ee58d64ef71.ctex::
+playersprite_pieces.png::CompressedTexture2D::2710541835358565328::1778142315::1778142317::1::::<><><>0<>0<>cd57b3f1d008db050397937826560489<>res://.godot/imported/playersprite_pieces.png-7066f6754de985972968906cf1bd948b.ctex::
 player_bullet.gd::GDScript::8804313535793522551::1777965670::0::1::::<>Area2D<><>0<>0<><>::
 player_bullet.tscn::PackedScene::6236006475422059864::1777883647::0::1::::<><><>0<>0<><>::uid://dxo4002benuex::::res://player_bullet.gd<>uid://bmmigjy716svi::::res://laserRed01.png
-player_ship.tscn::PackedScene::7014436073756638676::1777998867::0::1::::<><><>0<>0<><>::uid://jdr7ien812nx::::res://player.gd<>uid://bjui7rg8504mf::::res://spaceship_spritesheet.png<>uid://cu31d6t5whps7::::res://player_bullet.tscn
+player_ship.tscn::PackedScene::7014436073756638676::1778139538::0::1::::<><><>0<>0<><>::uid://jdr7ien812nx::::res://player.gd<>uid://cu31d6t5whps7::::res://player_bullet.tscn<>uid://gkpi72aphnmk::::res://Playersprite moving (small).png<>uid://h5uxxqq8xsk5::::res://Playersprite (small).png
 score.gd::GDScript::525380558196444503::1777998335::0::1::::<>Node<><>0<>0<><>::
 score_label.gd::GDScript::7465891629237852398::1777883763::0::1::::<>Label<><>0<>0<><>::
 small_asteroid_destroyed.png::CompressedTexture2D::2136759358323086960::1778071977::1778071978::1::::<><><>0<>0<>fb4581aae04d166f699c8f541e7d1b92<>res://.godot/imported/small_asteroid_destroyed.png-e11f4eca185d2e01485e79d0ee9dfb40.ctex::
-spaceship_spritesheet.png::CompressedTexture2D::3059951616569930969::1777877830::1777877926::1::::<><><>0<>0<>dd12252d52067d46a3eb09a00eac1ba9<>res://.godot/imported/spaceship_spritesheet.png-3c86d8c483903bdd75318d32a8192a55.ctex::
+spaceship_spritesheet.png::CompressedTexture2D::3059951616569930969::1777877830::1778139419::1::::<><><>0<>0<>dd12252d52067d46a3eb09a00eac1ba9<>res://.godot/imported/spaceship_spritesheet.png-3c86d8c483903bdd75318d32a8192a55.ctex::
 space_background_fixed.jpg::CompressedTexture2D::8729837335290435639::1778073723::1778073729::1::::<><><>0<>0<>0bfc08201e80767958f931b31b84b5b0<>res://.godot/imported/space_background_fixed.jpg-24b030976ab4b48b10a4f70e5535345a.ctex::
 startgame.gd::GDScript::366344211565425338::1777884997::0::1::::<>Button<><>0<>0<><>::
 startscreen.tscn::PackedScene::8236156585289096709::1777966245::0::1::::<><><>0<>0<><>::uid://fhpvu2h34pqw::::res://startgame.gd
-Untitled_design__2_-removebg-preview.png::CompressedTexture2D::1318033552783118054::1777877830::1777877926::1::::<><><>0<>0<>6370c674caf434726d55a801cbec9235<>res://.godot/imported/Untitled_design__2_-removebg-preview.png-6640d3cf9d551656a1e09454c7e66312.ctex::
+Untitled_design__2_-removebg-preview.png::CompressedTexture2D::1318033552783118054::1777877830::1778139419::1::::<><><>0<>0<>6370c674caf434726d55a801cbec9235<>res://.godot/imported/Untitled_design__2_-removebg-preview.png-6640d3cf9d551656a1e09454c7e66312.ctex::
