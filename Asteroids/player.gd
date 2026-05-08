@@ -2,14 +2,13 @@ extends CharacterBody2D
 
 @export var speed = 400
 @export var rotation_speed = 1.5
-@export var acceleration = 1500  # How fast you reach max speed
-@export var friction = 1000      # How fast you come to a stop
+@export var acceleration = 1500  
+@export var friction = 1000      
 @export var player_bullet : PackedScene
 @onready var energy_bar = $TextureProgressBar
-var lives = 3
 
 var max_energy = 30
-var energy = 30.0 # Make this a float (100.0) for smooth math
+var energy = 30.0 
 
 var rotation_direction = 0.0
 
